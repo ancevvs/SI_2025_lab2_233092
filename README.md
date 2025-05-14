@@ -23,3 +23,29 @@ V(G) = E – N + 2
 #### **Every Statement Метод**
 
 #### **Multiple Condition Метод**
+
+Во условот if (item.getPrice() > 300 || item.getDiscount() > 0 || item.getQuantity() > 10)
+Имаме 3 подуслови и секој подуслов може да биде Точен или Неточен
+
+Вкупно се 2^3 = 8 тест случаи
+
+
+C1 = item.getPrice() > 300
+
+
+C2 = item.getDiscount() > 0
+
+
+C3 = item.getQuantity() > 10
+
+
+|  C1 C2 C3  | Name     | Price | Discount | Quantity | Card Number  |
+|------------|----------|-------|----------|----------|--------------|
+|  T  T  T   | Produkt  | 500   | 0.5      | 30       | 123…16(valid)|
+|  T  T  F   | Produkt  | 500   | 0.5      | 5        | 123…16(valid)|
+|  T  F  T   | Produkt  | 500   | 0.0      | 30       | 123…16(valid)|
+|  F  T  T   | Produkt  | 100   | 0.5      | 30       | 123…16(valid)|
+|  T  F  F   | Produkt  | 500   | 0.0      | 30       | 123…16(valid)|
+|  F  T  F   | Produkt  | 100   | 0.5      | 5        | 123…16(valid)|
+|  F  F  T   | Produkt  | 100   | 0.0      | 30       | 123…16(valid)|
+|  F  F  F   | Produkt  | 100   | 0.0      | 5        | 123…16(valid)|
