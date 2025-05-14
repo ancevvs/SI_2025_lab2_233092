@@ -37,31 +37,31 @@ allItems=null, cardNumber=anything
 Бидејќи листата е null одма во втората линија се фрла исклучок и не се продолжува понатаму
 
 ##### Тест случај 2
-allItems=[Item(name="Produkt1", price=100, discount=0.0, quantity=1)], cardNumber="123…16"
+allItems = [Item(name="Produkt1", quantity=1, price=100, discount=0.0)], cardNumber="123…16"
 Валиден производ без попуст и валидна картичка
 Се извршува програмата без да се фрли исклучок и на крај враќа резултат
 
 #### Тест случај 3
-allItems=[Item(name="", price=100, discount=0.0, quantity=1)], cardNumber="123…16"
+allItems = [Item(name="", quantity=anything, price=anything, discount=anything)], cardNumber="123…16"
 Производ без име, празен string
 Кодот прекинува да се извршува, во линија 6 условот е точен и одма во линија 7 фрла грешка.
 
 ##### Тест случај 4
-allItems=[Item(name="Produkt2", price=500, discount=0.2, quantity=5)], cardNumber="123...16"
-Производ без име, празен string
+allItems = [Item(name="Produkt2", quantity=5, price=500, discount=0.2)], cardNumber="123...16"
 Се извршува условот во ред 9 поради високата цена, а потоа се применува попуст во линија 11
 
 ##### Тест случај 5
-allItems=[Item(name="Produkt3", price=100, discount=0.0, quantity=1)], cardNumber="аbc…16"
+allItems = [Item(name="Produkt3", quantity=anything, price=anything, discount=anything)], cardNumber="abc…16"
 Невалиден карактер во бројот на картичката
 Во линија 17 се фрла исклучок
 
 ##### Тест случај 6
-allItems=[Item(name="Produkt4", price=100, discount=0.0, quantity=1)], cardNumber="123"
+allItems = [Item(name="Produkt4", quantity=anything, price=anything, discount=anything)], cardNumber="123"
 Бројот на картичката не е валиден, не содржи точно 16 цифри
 Во линија 18 се фрла исклучок
 
 <br>
+
 **Покриени редови за секој од тест случаите**
 
 | Тест случај бр.  |               Покриени редови (број според коментари во кодот)                    |
