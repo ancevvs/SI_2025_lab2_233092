@@ -78,7 +78,7 @@ allItems = [Item(name="Produkt4", quantity=anything, price=anything, discount=an
 ### **Multiple Condition Метод**
 
 Во условот if (item.getPrice() > 300 || item.getDiscount() > 0 || item.getQuantity() > 10)
-имаме 3 подуслови и секој подуслов може да биде Точен или Неточен и поради тоа вкупно се 2^3 = 8 тест случаи
+имаме 3 подуслови и секој подуслов може да биде Точен или Неточен и поради тоа вкупно се 2^3 = 8 тест случаи, додека минимален број на тест случаи е 4. Минималниот број на тестови е 4 затоа што потребно ни е барем еден подуслов да е точен за да се изврши линијата во if-от, а има 3 подуслови и ги проверуваме нив и исто така проверуваме сите 3 подуслови да се неточни односно целиот if да е неточен.
 
 
 C1 = item.getPrice() > 300
@@ -92,14 +92,12 @@ C3 = item.getQuantity() > 10
 
 |  C1 C2 C3  | Name      | Price | Discount | Quantity | Card Number  |
 |------------|-----------|-------|----------|----------|--------------|
-|  T  T  T   | Produkt1  | 500   | 0.5      | 30       | 123…16(valid)|
-|  T  T  F   | Produkt2  | 500   | 0.5      | 5        | 123…16(valid)|
-|  T  F  T   | Produkt3  | 500   | 0.0      | 30       | 123…16(valid)|
-|  F  T  T   | Produkt4  | 100   | 0.5      | 30       | 123…16(valid)|
-|  T  F  F   | Produkt5  | 500   | 0.0      | 30       | 123…16(valid)|
-|  F  T  F   | Produkt6  | 100   | 0.5      | 5        | 123…16(valid)|
-|  F  F  T   | Produkt7  | 100   | 0.0      | 30       | 123…16(valid)|
-|  F  F  F   | Produkt8  | 100   | 0.0      | 5        | 123…16(valid)|
+|  T  X  X   | Produkt1  | 500   |     0    |     5    | 123…16(valid)|
+|  F  T  X   | Produkt2  | 100   |    0.5   |     5    | 123…16(valid)|
+|  F  F  T   | Produkt3  | 100   |    0.0   |    30    | 123…16(valid)|
+|  F  F  F   | Produkt4  | 100   |    0.0   |     5    | 123…16(valid)|
+
+
 
 ### **Unit Testing**
 
